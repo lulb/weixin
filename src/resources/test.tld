@@ -1,0 +1,16 @@
+<xml>
+    <!--ToUserName	开发者微信号 及管理后台的微信号-->
+    <!--FromUserName	发送方帐号（一个OpenID）关注用户的-->
+    <!--CreateTime	消息创建时间 （整型）单位秒-->
+    <!--MsgType	text-->
+    <!--Content	文本消息内容-->
+    <!--MsgId	消息id，64位整型-->
+    <ToUserName><![CDATA[gh_17d4d5e39137]]></ToUserName>
+    <FromUserName><![CDATA[o_tkt1ARaxx-f4_tH_1jGTQb2kJY]]></FromUserName>
+    <CreateTime>1543107953</CreateTime>
+    <MsgType><![CDATA[text]]></MsgType>
+    <Content><![CDATA[/::P]]></Content>
+    <MsgId>6627598192763943193</MsgId>
+</xml>
+
+

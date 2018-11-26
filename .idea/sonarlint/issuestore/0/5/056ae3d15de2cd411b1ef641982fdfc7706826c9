@@ -1,0 +1,20 @@
+
+V
+squid:S106&"9Replace this use of System.out or System.err by a logger.(Ü÷Ú”8¦הרמפ,
+V
+squid:S1069"9Replace this use of System.out or System.err by a logger.(Ü÷Ú”8¦הרמפ,
+]squid:S1161<":Add the "@Override" annotation above this method signature(‚¨ם‏ÿÿÿÿ8¦הרמפ,
+[
+squid:S106S"9Replace this use of System.out or System.err by a logger.(ףקְ˜ÿÿÿÿÿ8¦הרמפ,
+Ksquid:S1989"-Add a "try/catch" block for "getInputStream".(¿ üו8¦הרמפ,
+Asquid:S1989!"#Add a "try/catch" block for "read".(אן›ֹ8¦הרמפ,
+[
+squid:S106%"9Replace this use of System.out or System.err by a logger.(ֵ­ֻÝתÿÿÿÿ8¦הרמפ,
+Fsquid:S1989,"#Add a "try/catch" block for "read".(ּס»ûÿÿÿÿ8ּÊ¼נפ,
+Ksquid:S1989O"(Add a "try/catch" block for "getWriter".(ןפ†תÿÿÿÿ8¦הרמפ,
+V
+squid:S106U"9Replace this use of System.out or System.err by a logger.(±’„₪8¦הרמפ,
+Xsquid:S1161":Add the "@Override" annotation above this method signature( —ח8¦הרמפ,
+isquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(“‏8ּÊ¼נפ,
+[
+squid:S106X"9Replace this use of System.out or System.err by a logger.(ֶןאÊüÿÿÿÿ8¦הרמפ,
