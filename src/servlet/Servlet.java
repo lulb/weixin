@@ -1,10 +1,7 @@
 package servlet;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 import service.Service;
 
 import javax.servlet.ServletException;
@@ -12,12 +9,12 @@ import javax.servlet.ServletInputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 @WebServlet("/wx")
@@ -25,7 +22,8 @@ public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request,
                           javax.servlet.http.HttpServletResponse response)
             throws javax.servlet.ServletException, IOException {
-
+        request.setCharacterEncoding("utf8");
+        response.setCharacterEncoding("utf8");
         //查看微信公众号发送回来的消息
         ServletInputStream is = request.getInputStream();
         byte [] b = new byte[1024];
@@ -37,6 +35,33 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         String s = sb.toString();
         System.out.println(s);
         System.out.println("post");
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder db = null;
+        try {
+            db = dbf.newDocumentBuilder();
+            InputSource a = new InputSource();
+            a.setCharacterStream(new StringReader(s));
+            try {
+                org.w3c.dom.Document doc = db.parse(a);
+                String message = doc.getDocumentElement().getTextContent();
+                String test = doc.getDocumentElement().getTagName();
+                System.out.println(test+message);
+            } catch (IOException e) {
+                // handle IOException
+            } catch (SAXException e) {
+                e.printStackTrace();
+            }
+        } catch (ParserConfigurationException e1) {
+            // handle ParserConfigurationException
+        }
+        String responseXml = "<xml><ToUserName><![CDATA[o_tkt1ARaxx-f4_tH_1jGTQb2kJY]]></ToUserName><FromUserName><![CDATA[gh_17d4d5e39137]]></FromUserName><CreateTime>"+ System.currentTimeMillis()/1000+"</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content></xml>";
+        System.out.println(responseXml);
+        PrintWriter out  = response.getWriter();
+        out.print(responseXml);
+        out.flush();
+        out.close();
+
         //处理消息和事件推送
 //        Map<String, String> map = new HashMap<>();
 //        InputSource in = new InputSource(new StringReader(s));
